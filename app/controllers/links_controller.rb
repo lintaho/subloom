@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+	before_filter :authenticate_user!, :only =>[:new, :create]
+
 	def show
 		@link = Link.find(params[:id])
 	end
@@ -8,9 +10,9 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		@link = Link.new(link_params)
+		@link = current_user.links.new(link_params)
 		if @link.save
-			flash[:success] = "Link submitted!"
+			flash[:notice] = "Link submitted!"
 			redirect_to @link
 		else
 			render 'new'
@@ -19,7 +21,7 @@ class LinksController < ApplicationController
 	
 	private
 		def link_params
-			params.require(:link).permit(:title, :url)
+			params.require(:link).permit(:title, :url, :user_id)
 		end
 
 end
