@@ -8,6 +8,10 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'bootstrap-sass'
+
+gem 'textacular', '~> 3.0'
+
 gem 'will_paginate'
 
 # Use SCSS for stylesheets

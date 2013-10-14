@@ -1,14 +1,10 @@
-<h2> Welcome </h2>
+<%= form_tag(search_path, :method => "get", :style=>"margin: 5px 0 0 0") do %>
+	<%= text_field_tag(:q, nil, :placeholder => "search") %>
+	<%= submit_tag("Search") %>
+<% end %>
 
-<div class="row">
-
-<div class="span4">
-<%= link_to "Add a link", new_link_path %>
-</div>
-
-<div class="span8">
 <%= will_paginate @links %>
-
+<!-- Here are all the links that matched "<%= params[:q] %>" -->
 <ul>
   <% @links.each do |link| %>
     <li><%= link.title %>
@@ -24,6 +20,3 @@
 </ul>
 
 <%= will_paginate @links %>
-</div>
-
-</div>
