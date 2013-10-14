@@ -2,11 +2,12 @@
 
 <div class="row">
 
-<div class="span4">
-<%= link_to "Add a link", new_link_path %>
+<div class="span2">
+<%= link_to "Add a link", new_link_path %> <br/>
+<%= link_to "Search", search_path %>
 </div>
 
-<div class="span8">
+<div class="span10">
 <%= will_paginate @links %>
 
 <ul>
