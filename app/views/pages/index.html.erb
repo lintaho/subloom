@@ -3,7 +3,9 @@
 <div class="row">
 
 <div class="span2">
-<%= link_to "Add a link", new_link_path %> <br/>
+<% if can? :create, Link %>
+    <%= link_to "Add a link", new_link_path %> <br/>
+<% end %>
 <%= link_to "Search", search_path %>
 </div>
 

@@ -6,5 +6,7 @@ class User < ActiveRecord::Base
   # attr_accessbile :email, :username
   has_many :links
   has_many :votes, :dependent => :destroy
+
+  ROLES = %w[photog user]
   
 end

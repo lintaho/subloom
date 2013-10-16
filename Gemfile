@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 
 gem 'textacular', '~> 3.0'
 
+gem 'cancan'
+
 gem 'will_paginate'
 
 # Use SCSS for stylesheets
