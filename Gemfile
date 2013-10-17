@@ -16,6 +16,10 @@ gem 'cancan'
 
 gem 'will_paginate'
 
+group :development do
+	gem 'debugger'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

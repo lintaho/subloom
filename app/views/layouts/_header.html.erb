@@ -1,11 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Subloom", '#', id: "logo" %>
+      <%= link_to "Subloom", root_url, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_url %></li>
-          <li><%= link_to "Help",    '#' %></li>
+          <li><%= link_to "Home",   root_url %></li>
         <%# If user is logged in, show log out link %>
           <% if current_user.present? %>
             <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>

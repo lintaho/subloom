@@ -1,0 +1,21 @@
+TODO
+====
+
+-User and Photographer Profiles: create a model for profiles and associte it with users, routes, actions etc. 
+
+-Grid layout on homepage: use twitter bootstrap
+-Implement Angularjs into pages
+-Implement static page holderes: about, help, etc.
+-Design styles (check with Ryan)
+-Change add link to something more expansive: add upload images, or maybe blog post
+-Display links better on homepage, related to styles
+-Move search bar to front page
+-Implement filtering of home page
+-Add location to user profiles
+
+-Check if correct user signed in for editing profiles and such
+-Fix registration behavior rerouting to a profile page
+
+Future
+======
+-Map of photog locations

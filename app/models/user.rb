@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   # attr_accessbile :email, :username
   has_many :links
-  has_many :votes, :dependent => :destroy
-
+  has_many :votes
+  has_one :profile, :dependent => :destroy
   ROLES = %w[photog user]
   
 end

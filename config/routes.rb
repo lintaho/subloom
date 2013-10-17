@@ -6,9 +6,12 @@ Subloom::Application.routes.draw do
 
   resources :links
   resources :votes, :only => :create
+  resources :profiles
 
   get 'search' => 'search#index'
 
+  match '/about', to: 'pages#about', via:'get'
+  match '/contact', to: 'pages#contact', via:'get'
  #  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
