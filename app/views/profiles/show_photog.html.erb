@@ -1,6 +1,12 @@
 <div class ="row">
 	<div class="span6 offset3">
 		<h1> Welcome Photographer! </h1>
+		
+		<%= image_tag @profile.avatar.url %>
+
+
+
+
 		<h3><%= @profile.first_name %>
 		<%= @profile.last_name %> </h3>
 		<p>Born: <%= @profile.birthday %></p>

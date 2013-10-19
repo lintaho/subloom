@@ -1,10 +1,10 @@
 <% provide(:title, "Edit User") %>
 
-<h1>Updated Profile</h1>
+<h1>Update Profile</h1>
 
 <div class ="row">
 	<div class="span6 offset3">
-		<%= form_for(@profile) do |f| %>
+		<%= form_for(@profile, multipart: true) do |f| %>
 		
 			<%= f.label "First name: " %>
 			<%= f.text_field :first_name %>
@@ -18,7 +18,11 @@
 			<%= f.label "Bio: " %>
 			<%= f.text_area :bio %>
 
+			<%= f.label "Profile pic: " %>
+			<%= f.file_field :avatar %>
+
 			<%= f.submit "Save changes", class:"btn btn-large btn-primary" %>
+
 		<% end %>
 	</div>  
 </div>

@@ -8,6 +8,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem "paperclip", "~> 3.0"
+
 gem 'bootstrap-sass'
 
 gem 'textacular', '~> 3.0'
