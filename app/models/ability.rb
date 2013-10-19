@@ -8,6 +8,7 @@ class Ability
         can :manage, :all
     else
         can :manage, :all
+        cannot :show_photog, :all
         # cannot :manage, Link
     end
     # Define abilities for the passed in user here. For example:

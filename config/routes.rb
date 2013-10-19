@@ -8,6 +8,7 @@ Subloom::Application.routes.draw do
   resources :links
   resources :votes, :only => :create
   resources :profiles
+  get '/photographer/:id' => 'profiles#show_photog', as: 'photographer'
 
   get 'search' => 'search#index'
 

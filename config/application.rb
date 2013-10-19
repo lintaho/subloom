@@ -11,7 +11,7 @@ module Subloom
 
     config.assets.initialize_on_precompile = false
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    # Settings in config/environments/* take precedence over those specified here.
+    prepend_view_path = "app/views/devise" 
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 

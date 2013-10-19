@@ -14,7 +14,6 @@ TODO
 -Add location to user profiles
 
 -Check if correct user signed in for editing profiles and such
--Fix registration behavior rerouting to a profile page
 
 -Photographer pages
 -Users have no profiles? Or do they...?
@@ -22,3 +21,4 @@ TODO
 Future
 ======
 -Map of photog locations
+-Testing

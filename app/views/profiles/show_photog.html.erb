@@ -1,0 +1,12 @@
+<div class ="row">
+	<div class="span6 offset3">
+		<h1> Welcome Photographer! </h1>
+		<h3><%= @profile.first_name %>
+		<%= @profile.last_name %> </h3>
+		<p>Born: <%= @profile.birthday %></p>
+		About: <%= @profile.bio %>
+		<div>
+		<%= link_to "Edit profile", edit_profile_path, class:"btn btn-large"%>
+		</div>
+	</div>
+</div>

@@ -25,10 +25,17 @@ class ProfilesController < ApplicationController
 		else
 			render 'edit'
 		end
-
 	end
 
 	def show
+		# debugger
+		@profile = Profile.find(params[:id])
+		if current_user.role == "photog"
+			render 'show_photog'
+		end
+	end
+
+	def show_photog
 		@profile = Profile.find(params[:id])
 	end
 

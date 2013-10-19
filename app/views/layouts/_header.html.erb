@@ -7,9 +7,11 @@
           <li><%= link_to "Home",   root_url %></li>
         <%# If user is logged in, show log out link %>
           <% if current_user.present? %>
+            <li><%= link_to 'Profile', profile_path(current_user.profile) %>
             <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
         <%# If user is not logged in, show signup and login links %>
           <% else %>
+
             <li><%= link_to 'Sign In', new_user_session_path %> | </li>
             <li><%= link_to 'Register Now!', new_user_registration_path %> </li>
           <% end %>
