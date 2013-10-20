@@ -1,7 +1,8 @@
 <div class ="row">
 	<div class="span6 offset3">
-	    <%= render 'users/followform' if signed_in? %>
-
+		<% if current_user != @user %>
+	    	<%= render 'users/followform' if signed_in? %>
+		<% end %>
 		<h1> Welcome Photographer! </h1>
 		
 		<%= image_tag @profile.avatar.url %>

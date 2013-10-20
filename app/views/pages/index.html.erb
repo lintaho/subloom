@@ -15,12 +15,17 @@
 <ul>
   <% @links.each do |link| %>
     <li><%= link.title %>
+    <div id="vote_count_<%= link.id %>">
     <%= link.votes.count %>
+    </div>
+    <div id= "upvote_<%= link.id %>">
     <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
     *
+        <!-- <%= link_to "-", vote_path(:id => current_user.id, :vote => {:link_id => link.id, :user_id => current_user.id}), :method => :delete, remote: true %> -->
     <% else %>
-    	<%= link_to "+", votes_path(:vote => {:link_id => link.id}), :method => :post %>
+    	<%= link_to "+", votes_path(:vote => {:link_id => link.id}), :method => :post, remote: true %>
     <% end %>
+    </div>
     <a href=<%=link.url%>> <%= link.url%></a>
     </li>
   <% end %>

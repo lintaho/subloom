@@ -8,7 +8,7 @@ Subloom::Application.routes.draw do
   root :to => "pages#index"
 
   resources :links
-  resources :votes, :only => :create
+  resources :votes, only: [:create, :destroy]
   resources :profiles
   resources :follow_relationships, only: [:create, :destroy]
 

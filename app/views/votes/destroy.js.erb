@@ -1,0 +1,5 @@
+<% if @link %>
+$('#vote_count_<%= @link.id %>').html('<%=@link.votes.count %>');
+$('#upvote_<%= @link.id %>').html('<%= link_to "+", votes_path(:vote => {:link_id => @link.id, :user_id => @current_user.id}), :method => :post, remote: true %>');
+
+<% end %>

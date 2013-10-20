@@ -45,6 +45,7 @@ class ProfilesController < ApplicationController
 
 	def show_photog
 		@profile = Profile.find(params[:id])
+		@user = @profile.user
 	end
 
 	private
