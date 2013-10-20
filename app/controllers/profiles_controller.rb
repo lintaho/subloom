@@ -18,19 +18,27 @@ class ProfilesController < ApplicationController
 	end
 
 	def update
+
 		@profile = Profile.find(params[:id])
-		if @profile.update_attributes(prof_params)
-			flash[:notice] = "Profile updated"
+		if current_user != @profile.user
+			flash[:error] = "You are not authorized to do that"
 			redirect_to @profile
 		else
-			render 'edit'
+			if @profile.update_attributes(prof_params)
+				flash[:notice] = "Profile updated"
+				redirect_to @profile
+			else
+				render 'edit'
+			end
 		end
 	end
 
 	def show
 		# debugger
 		@profile = Profile.find(params[:id])
-		if current_user.role == "photog"
+		@user = @profile.user
+		# debugger
+		if @user.role == "photog"
 			render 'show_photog'
 		end
 	end

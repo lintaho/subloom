@@ -2,12 +2,16 @@ Subloom::Application.routes.draw do
 
 
   devise_for :users, :controllers => { :registrations => "registrations" }
-
+  match '/users/:id/following', :to => 'users#following', via: 'get', as: 'following_users'
+  match '/users/:id/followers', :to => 'users#followers', via: 'get', as: 'followers_users'
+  # match '/users/:id/', :to => 'users#show', via: 'get'
   root :to => "pages#index"
 
   resources :links
   resources :votes, :only => :create
   resources :profiles
+  resources :follow_relationships, only: [:create, :destroy]
+
   get '/photographer/:id' => 'profiles#show_photog', as: 'photographer'
 
   get 'search' => 'search#index'

@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
 		super
 		resource.update_attributes(:role => sign_up_params[:role])
 	end
-
+	
 
 	protected
 
