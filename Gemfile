@@ -20,6 +20,15 @@ gem 'will_paginate'
 
 group :development do
 	gem 'debugger'
+	gem 'rspec-rails'
+end
+
+group :test do
+	gem "rb-readline", "~> 0.5.0"
+	gem 'factory_girl_rails'
+	gem 'guard-rspec'
+	gem 'selenium-webdriver', '2.35.1'
+	gem 'capybara', '2.1.0'
 end
 
 # Use SCSS for stylesheets
@@ -47,6 +56,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+
 
 group :production do
 	gem 'rails_12factor', '0.0.2'

@@ -1,7 +1,9 @@
 TODO
 ====
 
--User and Photographer Profiles: create a model for profiles and associte it with users, routes, actions etc. 
+1. Write some tests
+2. User save link ability
+3. 
 
 -Grid layout on homepage: use twitter bootstrap
 -Implement Angularjs into pages
@@ -21,4 +23,3 @@ TODO
 Future
 ======
 -Map of photog locations
--Testing

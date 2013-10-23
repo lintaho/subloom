@@ -27,6 +27,9 @@
     <% end %>
     </div>
     <a href=<%=link.url%>> <%= link.url%></a>
+    <% if link.user %>
+    Submitted by: <%= link_to link.user.email, profile_path(link.user.profile) %>
+    <% end %>
     </li>
   <% end %>
 </ul>

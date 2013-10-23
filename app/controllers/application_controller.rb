@@ -24,14 +24,11 @@ class ApplicationController < ActionController::Base
 
 
 	def after_sign_in_path_for(resource)
-		request.env['omniauth.origin'] || session[:previous_url] 
+		# debugger
+		request.env['omniauth.origin'] || session[:previous_url] || profile_path(resource.profile) #something weird happens sometimes if i take off the last param
+		#like the user gets routed to /users/...
 		# || stored_location_for(resource) 
 		# || profile_path(resource.profile)
-	end
-
-	def after_sign_up_path_for(resource)
-		#not getting hit
-		root_path
 	end
 
 	def configure_permitted_parameters
