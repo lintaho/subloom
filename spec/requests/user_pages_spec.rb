@@ -46,7 +46,16 @@ describe "User pages" do
 				
 				let(:user) {User.find_by(email: email)}	
 				it { expect(page).to have_content(user.email) }
+				it { expect(page).to have_link('Sign Out') }
+				it { expect(page).to have_content("Welcome! You have signed up successfully.")}
+
+				describe "then signing out" do
+					before {click_link 'Sign Out'}
+					it {expect(page).to have_content("Signed out successfully.")}
+				end
 			end
+
+
 		end
 	end
 

@@ -3,6 +3,8 @@ FactoryGirl.define do
     	"email#{rand(10000000)}@factory.com"
   	end
 	
+
+
 	factory :user do
 		email
 		password "secretpassword"
@@ -10,6 +12,8 @@ FactoryGirl.define do
 	end
 
 	factory :profile do
-		user FactoryGirl.create(:user)
+		first_name "user name"
+		user
 	end
+
 end

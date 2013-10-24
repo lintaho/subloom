@@ -20,6 +20,11 @@
 			</div>
 		<% end %>
 
+		<% if @links.any? %>
+			<% @links.each do |link| %>
+		    <%= image_tag link.image.url %>
+			<% end %>
+		<% end %>
 		<div>
 			<%= render 'users/followstats' %>
 		</div>

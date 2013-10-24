@@ -15,6 +15,12 @@ describe "Authentication" do
     	before { click_button "Sign in" }
 
 		it { should have_selector('div.alert', text: 'Invalid') }
+
+		describe "flash message should go away" do 
+			before {click_link "Home"}
+
+			it { should_not have_selector('div.alert', text: 'Invalid')}
+		end
     end
 
     describe "with valid information" do

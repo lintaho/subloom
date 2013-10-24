@@ -14,7 +14,7 @@ class LinksController < ApplicationController
 		@link = current_user.links.new(link_params)
 		if @link.save
 			flash[:notice] = "Link submitted!"
-			redirect_to @link
+			redirect_to root_url
 		else
 			render 'new'
 		end
@@ -22,7 +22,7 @@ class LinksController < ApplicationController
 	
 	private
 		def link_params
-			params.require(:link).permit(:title, :url, :user_id)
+			params.require(:link).permit!
 		end
 
 end

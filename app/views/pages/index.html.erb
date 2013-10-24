@@ -15,9 +15,11 @@
 <ul>
   <% @links.each do |link| %>
     <li><%= link.title %>
+    <%= image_tag link.image.url %>
     <div id="vote_count_<%= link.id %>">
     <%= link.votes.count %>
     </div>
+
     <div id= "upvote_<%= link.id %>">
     <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
     *

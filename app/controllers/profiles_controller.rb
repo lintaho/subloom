@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
 		# debugger
 		@profile = Profile.find(params[:id])
 		@user = @profile.user
+		@links = @user.links
 		# debugger
 		if @user.role == "photog"
 			render 'show_photog'
@@ -46,6 +47,7 @@ class ProfilesController < ApplicationController
 	def show_photog
 		@profile = Profile.find(params[:id])
 		@user = @profile.user
+
 	end
 
 	private

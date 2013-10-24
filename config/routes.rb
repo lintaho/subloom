@@ -7,12 +7,16 @@ Subloom::Application.routes.draw do
   # match '/users/:id/', :to => 'users#show', via: 'get'
   root :to => "pages#index"
 
+
+
   resources :links
   resources :votes, only: [:create, :destroy]
   resources :profiles
   resources :follow_relationships, only: [:create, :destroy]
 
   get '/photographer/:id' => 'profiles#show_photog', as: 'photographer'
+  get '/photographers/' => 'users#photogs_index', as: "photogs_index"
+
 
   get 'search' => 'search#index'
 
