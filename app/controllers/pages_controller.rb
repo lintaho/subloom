@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 	end
 
 	def index
-		@links = Link.paginate(page: params[:page], :per_page => 5)
+		@links = Link.paginate(page: params[:page], :per_page => 12)
 	end
 
 end

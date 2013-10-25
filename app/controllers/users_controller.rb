@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	end
 	
 	def photogs_index
-		@users = User.where(:role => "photog").paginate(page: params[:page])
+		@users = User.where(:role => "photog").paginate(page: params[:page], :per_page => 20)
 		@title = "Photographer Directory"
 	end
 

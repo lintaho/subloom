@@ -1,42 +1,44 @@
-<h2> Welcome </h2>
+<div class="row-fluid">
 
-<div class="row">
-
-<div class="span2">
+<div class="span1 offset1">
 <% if can? :create, Link %>
     <%= link_to "Add a link", new_link_path %> <br/>
 <% end %>
 <%= link_to "Search", search_path %>
 </div>
 
-<div class="span10">
-<%= will_paginate @links %>
+<div class="span8">
 
-<ul>
+
+<ul class= "thumbnails">
   <% @links.each do |link| %>
-    <li><%= link.title %>
-    <%= image_tag link.image.url %>
-    <div id="vote_count_<%= link.id %>">
-    <%= link.votes.count %>
+    <li class="span3"><%= link.title %> 
+    <span id="vote_count_<%= link.id %>">
+        <%= link.votes.count %>
+    </span>
+
+    <span id= "upvote_<%= link.id %>">
+        <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
+        
+            <!-- <%= link_to "-", vote_path(:id => current_user.id, :vote => {:link_id => link.id, :user_id => current_user.id}), :method => :delete, remote: true %> -->
+        <% else %>
+            <%= link_to "Upvote", votes_path(:vote => {:link_id => link.id}), :method => :post, remote: true %>
+        <% end %>
+    </span>
+    <div class="image">
+    <%= link_to image_tag(link.image.url),  link_path(link)%>
     </div>
 
-    <div id= "upvote_<%= link.id %>">
-    <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
-    *
-        <!-- <%= link_to "-", vote_path(:id => current_user.id, :vote => {:link_id => link.id, :user_id => current_user.id}), :method => :delete, remote: true %> -->
-    <% else %>
-    	<%= link_to "+", votes_path(:vote => {:link_id => link.id}), :method => :post, remote: true %>
-    <% end %>
-    </div>
-    <a href=<%=link.url%>> <%= link.url%></a>
+
+    <!-- <a href=<%=link.url%>> <%= link.url%></a> -->
+    By:
     <% if link.user %>
-    Submitted by: <%= link_to link.user.email, profile_path(link.user.profile) %>
+    <%= link_to link.user.email, profile_path(link.user.profile) %>
     <% end %>
     </li>
   <% end %>
 </ul>
-
-<%= will_paginate @links %>
+    <%= will_paginate @links %>
 </div>
 
 </div>
