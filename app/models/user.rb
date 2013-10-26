@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :reverse_follow_relationships, foreign_key: "followed_id", class_name: "FollowRelationship", dependent: :destroy
   has_many :followers, through: :reverse_follow_relationships, source: :follower
 
+  has_many :save_relationships, foreign_key: "user_id", :dependent => :destroy
+  has_many :saved_links, through: :save_relationships, source: :link
+
   after_create :create_profile
 
   ROLES = %w[photog user]
@@ -29,6 +32,18 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     follow_relationships.find_by(followed_id: other_user.id).destroy!
+  end
+
+  def save_link!(link)
+    save_relationships.create(link_id: link.id)
+  end
+
+  def unsave_link!(link)
+    save_relationships.find_by(link_id: link.id).destroy!
+  end
+
+  def saved_link?(link)
+    save_relationships.find_by(link_id: link.id)
   end
 
  	def create_profile

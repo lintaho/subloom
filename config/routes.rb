@@ -13,7 +13,7 @@ Subloom::Application.routes.draw do
   resources :votes, only: [:create, :destroy]
   resources :profiles
   resources :follow_relationships, only: [:create, :destroy]
-
+  resources :save_relationships, only: [:create, :destroy]
   get '/photographer/:id' => 'profiles#show_photog', as: 'photographer'
   get '/photographers/' => 'users#photogs_index', as: "photogs_index"
 

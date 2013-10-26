@@ -8,7 +8,12 @@
 		
 		<%= image_tag @profile.avatar.url %>
 
-
+		You saved: 
+		<% if @saved_links.any? %>
+			<% @saved_links.each do |sl| %>
+			<%=  sl.title %>
+			<% end %>
+		<% end %>
 
 
 		<h3><%= @profile.first_name %>

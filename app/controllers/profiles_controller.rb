@@ -38,6 +38,7 @@ class ProfilesController < ApplicationController
 		@profile = Profile.find(params[:id])
 		@user = @profile.user
 		@links = @user.links
+		@saved_links = @user.saved_links
 		# debugger
 		if @user.role == "photog"
 			render 'show_photog'

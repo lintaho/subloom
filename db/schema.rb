@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024064723) do
+ActiveRecord::Schema.define(version: 20131026043523) do
 
   create_table "follow_relationships", force: true do |t|
     t.integer  "follower_id"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20131024064723) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "save_relationships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "link_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "save_relationships", ["link_id"], name: "index_save_relationships_on_link_id", using: :btree
+  add_index "save_relationships", ["user_id", "link_id"], name: "index_save_relationships_on_user_id_and_link_id", unique: true, using: :btree
+  add_index "save_relationships", ["user_id"], name: "index_save_relationships_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
