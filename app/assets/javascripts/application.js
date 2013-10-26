@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
 
 $(document).ajaxError(function (e, xhr, settings) {
@@ -20,3 +21,5 @@ $(document).ajaxError(function (e, xhr, settings) {
  			window.location.replace('/users/sign_in');
         }
     });
+
+// $('#sidebar').affix();

@@ -106,3 +106,23 @@ footer ul li {
 .row-fluid ul.thumbnails li.span6:nth-child(2n + 3) { margin-left : 0px; }
 .row-fluid ul.thumbnails li.span4:nth-child(3n + 4) { margin-left : 0px; }
 .row-fluid ul.thumbnails li.span3:nth-child(4n + 5) { margin-left : 0px; }
+
+.row-fluid ul.thumbnails li.span3{
+  height: 320px;
+  border: solid 1px;
+}
+
+
+p.thumbnail_heading{
+  text-align: right;
+}
+
+strong.thumbnail_title{
+  float:left;
+}
+
+.thumbnail_image{
+  min-height: 150px;
+  // height: 250px;
+}
+
