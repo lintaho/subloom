@@ -1,9 +1,7 @@
 <div id="save_form_<%= link.id %>">
-
 <% if !current_user || !current_user.saved_link?(link) %>
 	<%= render '/links/save', :link => link %>
 <% else %>
 	<%= render '/links/unsave', :link => link %>
 <% end %>
-
 </div>

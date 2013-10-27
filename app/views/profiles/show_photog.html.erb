@@ -9,7 +9,7 @@
 		<%= image_tag @profile.avatar.url %>
 
 		You saved: 
-		<% if @saved_links.any? %>
+		<% if @saved_links && @saved_links.any? %>
 			<% @saved_links.each do |sl| %>
 			<%=  sl.title %>
 			<% end %>
@@ -26,7 +26,7 @@
 			</div>
 		<% end %>
 
-		<% if @links.any? %>
+		<% if @links && @links.any? %>
 			<% @links.each do |link| %>
 		    <%= image_tag link.image.url %>
 			<% end %>

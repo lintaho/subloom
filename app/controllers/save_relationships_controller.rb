@@ -3,7 +3,7 @@ class SaveRelationshipsController < ApplicationController
 	
 	def create
 		# debugger
-		@link = Link.find(params[:save_relationship][:link_id])
+		@link = Link.find(params[:link_id])
 		current_user.save_link!(@link)
 		respond_to do |format|
 			format.html { redirect_to root_url }
