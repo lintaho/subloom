@@ -2,6 +2,10 @@ class LinksController < ApplicationController
 	before_filter :authenticate_user!, :only =>[:new, :create]
 	load_and_authorize_resource
 	
+	def index
+		# @links = Link.f
+	end
+
 	def show
 		@link = Link.find(params[:id])
 	end

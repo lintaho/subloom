@@ -1,9 +1,7 @@
 <div class="container">
 	<div class ="row">
-		<div class="span6 offset3">
-<!-- 			<% if current_user != @user %> -->
+		<div class="span12">
 			<%= render 'users/followform' %>
-			<!-- <% end %> -->
 			<h1> Photographer <%= @profile.user.email %>! </h1>
 
 			<%= image_tag @profile.avatar.url %>

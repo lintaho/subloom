@@ -9,50 +9,8 @@
 
 <div class="span8">
 
+<%= render 'links/showlinks', :links => @links %>
 
-<ul class= "thumbnails">
-  <% @links.each do |link| %>
-    <li class="span3">
-    <div class="row-fluid">
-        <div class="span7">
-            <p class="thumbnail_heading">
-                <strong class="thumbnail_title"><%= link.title %> </strong>
-            </p>
-        </div>
-        <div class="span3">
-            <%= render 'links/saveform', :link => link %>
-        </div>
-        <div class="span1">
-            <span id="vote_count_<%= link.id %>">
-                <strong><%= link.votes.count %></strong>
-            </span>
-        </div>
-        <div class="span1">
-                <span id= "upvote_<%= link.id %>">
-                    <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
-                    
-                        <!-- <%= link_to "-", vote_path(:id => current_user.id, :vote => {:link_id => link.id, :user_id => current_user.id}), :method => :delete, remote: true %> -->
-                    <% else %>
-                        <%= link_to "<i class='icon-arrow-up'></i>".html_safe, votes_path(:vote => {:link_id => link.id}), :method => :post, remote: true %>
-                    <% end %>
-                </span>
-        </div>
-    </div>
-
-    <div class="thumbnail_image">
-        <%= link_to image_tag(link.image.url),  link_path(link)%>
-    </div>
-
-            <!-- <a href=<%=link.url%>> <%= link.url%></a> -->
-            By:
-            <% if link.user %>
-            <%= link_to link.user.email, profile_path(link.user.profile) %>
-            <% end %>
-    
-    </li>
-  <% end %>
-</ul>
-    <%= will_paginate @links %>
 </div>
 
 </div>

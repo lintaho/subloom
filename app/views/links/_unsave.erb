@@ -1,3 +1,3 @@
 <%= form_for(current_user.save_relationships.find_by(link_id: link.id), remote:true, html: {method: :delete} ) do |f| %>
-	<%= f.submit "Unclip", class: "btn" %>
+	<%= f.submit "Unsave", class: "btn" %>
 <% end %>

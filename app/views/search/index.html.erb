@@ -1,17 +1,18 @@
-<%= will_paginate @links %>
-<!-- Here are all the links that matched "<%= params[:q] %>" -->
-<ul>
-  <% @links.each do |link| %>
-    <li><%= link.title %>
-    <%= link.votes.count %>
-    <% if current_user && current_user.votes.where(:link_id => link.id).present? %>
-    *
-    <% else %>
-    	<%= link_to "+", votes_path(:vote => {:link_id => link.id}), :method => :post %>
-    <% end %>
-    <a href=<%=link.url%>> <%= link.url%></a>
-    </li>
-  <% end %>
-</ul>	
+<div class="row-fluid">
 
-<%= will_paginate @links %>
+ <!-- data-spy="affix" data-offset-top="000"  -->
+<div class="span1 offset1" id="sidebar">
+    <%= link_to "Back to home", root_url, class:"btn btn-primary" %>
+    <br><br>
+    <% if can? :create, Link %>
+        <%= link_to "Add a link", new_link_path, class:"btn btn-primary"%> <br/>
+    <% end %>
+</div>
+
+<div class="span8">
+
+<%= render 'links/showlinks', :links => @links %>
+
+</div>
+
+</div>
