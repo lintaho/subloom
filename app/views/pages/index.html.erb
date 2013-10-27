@@ -3,7 +3,7 @@
  <!-- data-spy="affix" data-offset-top="000"  -->
 <div class="span1 offset1" id="sidebar">
     <% if can? :create, Link %>
-        <%= link_to "Add a link", new_link_path %> <br/>
+        <%= link_to "Add a link", new_link_path, class:"btn btn-primary"%> <br/>
     <% end %>
 </div>
 

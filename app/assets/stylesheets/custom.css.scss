@@ -74,14 +74,10 @@ body {
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  &:hover{
+    text-decoration: none;
 }
-
-// #logo:hover {
-//   color: #fff;
-//   text-decoration: none;
-// }
-
-// /* footer */
+}
 
 footer {
     margin-top: 45px;
@@ -90,10 +86,11 @@ footer {
     color: #999;
     a{
         color: #555;
-    }
-    a:hover{
-        color: #222;
-        text-decoration: none;
+
+        &:hover{
+            color: #222;
+            text-decoration: none;
+        }
     }
 
     ul{
@@ -131,46 +128,3 @@ strong.thumbnail_title{
 // height: 250px;
 }
 
-.btnsave {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
-    background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
-    background-color:#9dce2c;
-    -webkit-border-top-left-radius:0px;
-    -moz-border-radius-topleft:0px;
-    border-top-left-radius:0px;
-    -webkit-border-top-right-radius:0px;
-    -moz-border-radius-topright:0px;
-    border-top-right-radius:0px;
-    -webkit-border-bottom-right-radius:0px;
-    -moz-border-radius-bottomright:0px;
-    border-bottom-right-radius:0px;
-    -webkit-border-bottom-left-radius:0px;
-    -moz-border-radius-bottomleft:0px;
-    border-bottom-left-radius:0px;
-    text-indent:0px;
-    border:1px solid #83c41a;
-    display:inline-block;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:11px;
-    font-weight:normal;
-    font-style:normal;
-    height:20px;
-    line-height:20px;
-    width:83px;
-    text-decoration:none;
-    text-align:center;
-    text-shadow:1px 1px 0px #689324;
-
-    :hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
-        background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
-        background-color:#8cb82b;
-    }
-    :active {
-        position:relative;
-        top:1px;
-    }
-}

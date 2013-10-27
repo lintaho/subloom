@@ -1,39 +1,39 @@
 <div class="container">
-<div class ="row">
-	<div class="span6 offset3">
-		<% if current_user != @user %>
-	    	<%= render 'users/followform' if signed_in? %>
-		<% end %>
-		<h1> Welcome Photographer <%= @profile.user.email %>! </h1>
-		
-		<%= image_tag @profile.avatar.url %>
+	<div class ="row">
+		<div class="span6 offset3">
+<!-- 			<% if current_user != @user %> -->
+			<%= render 'users/followform' %>
+			<!-- <% end %> -->
+			<h1> Photographer <%= @profile.user.email %>! </h1>
 
-		You saved: 
-		<% if @saved_links && @saved_links.any? %>
+			<%= image_tag @profile.avatar.url %>
+
+			<% if @saved_links && @saved_links.any? %>
 			<% @saved_links.each do |sl| %>
 			<%=  sl.title %>
 			<% end %>
-		<% end %>
-
-
-		<h3><%= @profile.first_name %>
-		<%= @profile.last_name %> </h3>
-		<p>Born: <%= @profile.birthday %></p>
-		About: <%= @profile.bio %>
-		<% if current_user == @user %>
-			<div>
-			<%= link_to "Edit profile", edit_profile_path, class:"btn btn-large"%>
-			</div>
-		<% end %>
-
-		<% if @links && @links.any? %>
-			<% @links.each do |link| %>
-		    <%= image_tag link.image.url %>
 			<% end %>
-		<% end %>
-		<div>
-			<%= render 'users/followstats' %>
+
+
+			<h3><%= @profile.first_name %>
+				<%= @profile.last_name %> 
+			</h3>
+			<p>Born: <%= @profile.birthday %></p>
+			About: <%= @profile.bio %>
+			<% if current_user == @user %>
+			<div>
+				<%= link_to "Edit profile", edit_profile_path, class:"btn btn-large"%>
+			</div>
+			<% end %>
+
+			<% if @links && @links.any? %>
+			<% @links.each do |link| %>
+			<%= image_tag link.image.url %>
+			<% end %>
+			<% end %>
+			<div>
+				<%= render 'users/followstats' %>
+			</div>
 		</div>
 	</div>
-</div>
 </div>
