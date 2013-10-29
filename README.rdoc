@@ -3,4 +3,4 @@
 Photography showcase project- currently under development. 
 Follow progress at:
 
-{still-caverns-9885.herokuapp.com}(still-caverns-9885.herokuapp.com)
+{Link still-caverns-9885.herokuapp.com}(still-caverns-9885.herokuapp.com)
