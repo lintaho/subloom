@@ -27,6 +27,9 @@
 			<% if @links && @links.any? %>
 			<% @links.each do |link| %>
 			<%= image_tag link.image.url %>
+				<% if current_user == @user %>
+					<%= link_to 'Delete post', link, :method => :delete, :confirm => 'Are you sure?' %>
+				<% end %>
 			<% end %>
 			<% end %>
 			<div>

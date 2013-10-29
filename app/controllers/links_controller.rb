@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-	before_filter :authenticate_user!, :only =>[:new, :create]
+	before_filter :authenticate_user!, :only =>[:new, :create, :destroy]
 	load_and_authorize_resource
 	
 	def index
@@ -23,7 +23,20 @@ class LinksController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def destroy
+		# debugger
+		@link = Link.find(params[:id])
+		if @link.destroy
+			flash[:notice] = "Post deleted!"
+			redirect_to profile_path(current_user.profile)
+		else
+			flash[:alert] = "Post deletion failed."
+			redirect_to profile_path(current_user.profile)
+		end
+	end
 	
+
 	private
 		def link_params
 			params.require(:link).permit!
