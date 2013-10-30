@@ -6,7 +6,7 @@ describe "Pages" do
     before { visit root_path }
     subject{ page }
     # let(:user) { FactoryGirl.create(:user) }
-    it { should have_content('Welcome') }
+    it { should have_content('Add a link') }
   end
 
 

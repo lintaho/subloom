@@ -3,7 +3,6 @@ class LinksController < ApplicationController
 	load_and_authorize_resource
 	
 	def index
-		# @links = Link.f
 	end
 
 	def show

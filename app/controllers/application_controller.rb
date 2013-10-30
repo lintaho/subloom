@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
 
 
 	def after_sign_in_path_for(resource)
-		# debugger
 		request.env['omniauth.origin'] || session[:previous_url] || profile_path(resource.profile) #something weird happens sometimes if i take off the last param
 		#like the user gets routed to /users/...
 		# || stored_location_for(resource) 
