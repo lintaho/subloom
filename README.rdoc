@@ -1,6 +1,3 @@
 == SUBLOOM 
 
-Photography showcase project- currently under development. 
-Follow progress at:
-
-still-caverns-9885.herokuapp.com
+Photography showcase project- a fun introduction to rails. INACTIVE
